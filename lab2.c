@@ -10,7 +10,6 @@ int main()
     {
         double y = (pow(a, x) + pow(a, -x)) / 2;
         printf("y(x) = %lf\n", y);
-    //if ((y >= -1) && (y <= 2))
         double z = sqrt(2 + y - y * y);
         printf("z(y) = %lf", z);
     }
