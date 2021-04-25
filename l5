@@ -15,12 +15,13 @@ int pr(int n)
 
 int pl(int n, int i = 2)
 {
-    if (n == 1)
+    if (n <= 1)
+        return (n == 2) ? 1 : -1;
+    if ((n % i == 0) && (i != n))
         return -1;
-    if (i > n / 2)
+    if (i * i > n)
         return 1;
-    return n % i ? pl(n, ++i) : -1;
-
+    return pl(n, i + 1);
 }
 
 int main()
@@ -28,7 +29,7 @@ int main()
 
     int n, i;
     printf("Input a number: ");
-    scanf_s("%d", &n);
+    scanf("%d", &n);
     printf("Cycle: %d\n", pr(n));
     printf("Recurcion: %d\n", pl(n));
 return 0;
